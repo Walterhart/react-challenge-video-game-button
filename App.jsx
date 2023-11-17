@@ -25,9 +25,23 @@ export default function App() {
         4. If you complete these tasks correctly, the button should have some nice visual effects 
            when you click it, and the workshop background should be automatically replaced by a light blue background.
 */
+  
+   const gameStatusElement= () =>{
+       return gameRunning? "Pause":"Play"
+   }
+   
+   const handleGameRunning = () =>{
+       setGameRunning(!gameRunning)
+   }
+  
     return (
-        <div>       
-
+        <div > 
+        <button 
+        onClick={handleGameRunning} 
+        className={"video-game-button"}
+        > 
+        {gameStatusElement()}
+        </button>    
         </div>
   )
 }
